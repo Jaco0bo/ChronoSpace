@@ -1,0 +1,129 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  background-color: #fdfdfd; 
+  color: #333;
+  font-family: 'Playfair Display', serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+#header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  padding: 0 20px;
+  background-color: white; 
+}
+
+#logo {
+  height: 60px;
+  width: auto; 
+  margin-right: auto;
+}
+
+
+#name-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+
+.watch-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 24px;
+  padding: 24px;
+  align-items: start; 
+}
+
+
+.watch-card {
+  display: grid;
+  grid-template-rows: 200px 1fr; /* 200px para la imagen, el resto para info */
+  height: 420px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+.watch-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+
+.watch-card-info {
+  grid-row: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16px;
+  background-color: #f8f7f7;
+}
+
+.watch-card-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 8px;
+  line-height: 1.2em;
+  max-height: 2.4em;        
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.watch-card-brand,
+.watch-card-price {
+  margin: 4px 0;
+}
+
+.mark-as-favorite {
+  background: transparent;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;          
+  transition: color 0.2s;
+}
+
+.mark-as-favorite:hover {
+  transform: scale(1.2);
+}
+
+
+.watch-card-image-wrapper {
+  grid-row: 1;
+  width: 100%;
+  position: relative;
+  background-color: #ffffff;
+}
+
+.watch-card-image-wrapper::before {
+  content: "";
+  display: block;
+  padding-top: 75%; 
+}
+
+.watch-card-image-wrapper img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  max-width: 100%;
+  max-height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: contain;
+}
+
+body.preload * {
+  visibility: hidden;
+}
+body.preload #root {
+  visibility: visible;
+}
