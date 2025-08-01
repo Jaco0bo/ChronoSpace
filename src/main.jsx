@@ -13,3 +13,4 @@ root.render(
 );
 
 container.style.opacity = '1';
+document.body.classList.remove('preload')

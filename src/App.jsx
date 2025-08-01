@@ -1,11 +1,13 @@
-import { useState } from 'react'
+import { useEffect } from 'react'
 import WatchList from './pages/WatchList'
 import Header from './components/Header'
 import Contact from './components/Contact'
 
 function App() {
-  const [count, setCount] = useState(0)
-
+    useEffect(() => {
+    document.body.classList.remove('preload')
+  }, [])
+  
   return (
     <>
       <div className="App">
