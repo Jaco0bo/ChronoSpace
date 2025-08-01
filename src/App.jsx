@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import WatchList from './pages/WatchList'
 import Header from './components/Header'
 import Contact from './components/Contact'
+import FilterSideBar from './components/FilterSideBar'
 
 function App() {
     useEffect(() => {
@@ -10,11 +11,12 @@ function App() {
   
   return (
     <>
-      <div className="App">
-        <Header />
+      <Header />
+      <div className="main-content">
+        <FilterSideBar />
         <WatchList />
-        <Contact />
       </div>
+      <Contact />
     </>
   )
 }
