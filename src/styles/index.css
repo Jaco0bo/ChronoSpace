@@ -148,6 +148,9 @@ body, html {
 
 .watch-list-wrapper {
   width: 100%;
+  flex: 1;
+  padding: 1rem;
+  margin-left: 9rem;
 }
 
 .pagination {

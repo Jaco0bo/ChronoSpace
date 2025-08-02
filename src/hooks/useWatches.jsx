@@ -123,7 +123,7 @@ export function useWatches() {
     new Watch(
       15,
       'Rolex Submariner 126618LN Solid Gold Black',
-      'Gold/Black',
+      'Gold',
       40600,
       'Rolex',
       2020,
@@ -132,7 +132,7 @@ export function useWatches() {
     new Watch(
       16,
       'Rolex Submariner 126619LB White Gold Blue',
-      'White Gold/Blue',
+      'Blue',
       43700,
       'Rolex',
       2020,
@@ -215,7 +215,7 @@ export function useWatches() {
       'Grand Seiko Snowflake',
       'White',
       5800.00,
-      'Grand Seiko',
+      'Seiko',
       2023,
       'https://www.grand-seiko.com/us-en/-/media/Images/Product--Image/All/GrandSeiko/2022/02/19/21/47/SBGA211G/SBGA211G.png'
     ),

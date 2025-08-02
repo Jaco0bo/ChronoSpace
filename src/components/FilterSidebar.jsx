@@ -1,85 +1,52 @@
-export default function FiltersSidebar() {
+export default function FiltersSidebar({
+  selectedBrands = [], 
+  selectedPrices = [], 
+  selectedColors = [], 
+  toggleFilter 
+}) {
   return (
     <div className="filters-sidebar">
       <h3 className="filter-names">MARCAS</h3>
-      <label>
-        <input type="checkbox" />
-        Rolex
-      </label>
-      <label>
-        <input type="checkbox" />
-        Casio
-      </label>
-      <label>
-        <input type="checkbox" />
-        Omega
-      </label>
-      <label>
-        <input type="checkbox" />
-        Patek Philippe
-      </label>
-       <label>
-        <input type="checkbox" />
-        Seiko
-      </label>
-      <label>
-        <input type="checkbox" />
-        TAG Heuer
-      </label>  
+      {["Rolex", "Casio", "Cartier", "Omega", "Patek Philippe", "Seiko", "TAG Heuer", "Audemars Piguet"].map((brand) => (
+        <label key={brand}>
+          <input
+            type="checkbox"
+            checked={selectedBrands.includes(brand)}
+            onChange={() => toggleFilter("brand", brand)}
+          />
+          {brand}
+        </label>
+      ))}
+
       <h3 className="filter-names">PRECIO</h3>
-      <label>
-        <input type="checkbox" />
-        Menos de $100
-      </label> 
-      <label>
-        <input type="checkbox" />
-        $100 – $500
-      </label> 
-      <label>
-        <input type="checkbox" />
-        $500 – $1.000
-      </label> 
-      <label>
-        <input type="checkbox" />
-        $1.000 – $5.000
-      </label>
-      <label>
-        <input type="checkbox" />
-        Más de $5.000
-      </label> 
+      {[
+        { label: "$15 – $35", value: "15-35" },
+        { label: "$2.000 – $7.500", value: "2000-7500" },
+        { label: "$7.501 – $15.000", value: "7501-15000" },
+        { label: "$15.001 – $40.000", value: "15001-40000" },
+        { label: "Más de $40.000", value: ">40000" },
+      ].map(({ label, value }) => (
+        <label key={value}>
+          <input
+            type="checkbox"
+            checked={selectedPrices.includes(value)}
+            onChange={() => toggleFilter("price", value)}
+          />
+          {label}
+        </label>
+      ))}
+
       <h3 className="filter-names">COLOR</h3>
-      <label>
-        <input type="checkbox" />
-        Negro
-      </label> 
-      <label>
-        <input type="checkbox" />
-        Blanco
-      </label> 
-      <label>
-        <input type="checkbox" />
-        Gris
-      </label> 
-      <label>
-        <input type="checkbox" />
-        Plateado
-      </label> 
-      <label>
-        <input type="checkbox" />
-        Dorado
-      </label> 
-      <label>
-        <input type="checkbox" />
-        Azul
-      </label> 
-      <label>
-        <input type="checkbox" />
-        Verde
-      </label> 
-      <label>
-        <input type="checkbox" />
-        Rosado
-      </label>
+      {["Negro", "Blanco", "Gris", "Plateado", "Dorado", "Azul", "Verde", "Rosado"].map((color) => (
+        <label key={color}>
+          <input
+            type="checkbox"
+            checked={selectedColors.includes(color)}
+            onChange={() => toggleFilter("color", color)}
+          />
+          {color}
+        </label>
+      ))}
     </div>
-  )
+  );
 }

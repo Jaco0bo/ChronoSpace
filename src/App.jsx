@@ -13,7 +13,6 @@ function App() {
     <>
       <Header />
       <div className="main-content">
-        <FilterSideBar />
         <WatchList />
       </div>
       <Contact />

@@ -1,21 +1,26 @@
 import React from "react";
 
 export default function Contact() {
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        alert('Mensaje enviado!');
+    };
+
     return (
         <div className="contact">
-            <h2>Contact Us</h2>
-            <p>If you have any questions or feedback, feel free to reach out!</p>
-            <form>
-                <label htmlFor="name">Name:</label>
-                <input type="text" id="name" name="name" required />
-                
-                <label htmlFor="email">Email:</label>
-                <input type="email" id="email" name="email" required />
-                
-                <label htmlFor="message">Message:</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
-                
-                <button type="submit">Send</button>
+            <h1>CONTACTANOS...</h1>
+            <form className="contact-form" onSubmit={handleSubmit}>
+                <div className="input-group">
+                    <label htmlFor="name">Ingresa tu nombre</label>
+                    <input type="text" id="name" name="name" required />
+                </div>
+                <div className="input-group"> 
+                    <label htmlFor="email">Ingresa tu correo</label>
+                    <input type="email" id="email" name="email" required />
+                </div>    
+                <button type="submit" className="send-button">
+                    ENVIAR
+                </button>
             </form>
         </div>
     );
