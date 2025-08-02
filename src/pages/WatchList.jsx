@@ -9,7 +9,7 @@ const ITEMS_PER_PAGE = 9;
 
 export default function WatchList() {
   const { favorites, addFavorite, removeFavorite, isFavorite } = useFavorites();
-  const { watches } = useWatches();
+  const { watches, loading, error } = useWatches();
   const [ currentPage, setCurrentPage ] = useState(1);   
   const { filteredWatches, toggleFilter, selectedBrands, selectedPrices, selectedColors,
   } = useFilters(watches);
@@ -21,6 +21,15 @@ export default function WatchList() {
   const toggleFavorite = (watch) => {;
     isFavorite(watch.id) ? removeFavorite(watch.id) : addFavorite(watch);
   };
+
+  if (loading) {
+    return <p style={{ padding: "2rem", textAlign: "center" }}>Cargando relojes…</p>;
+  }
+  if (error) {
+    return <p style={{ padding: "2rem", textAlign: "center", color: "red" }}>
+      Error al cargar: {error}
+    </p>;
+  }
 
   const totalPages = Math.ceil(filteredWatches.length / ITEMS_PER_PAGE);
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
