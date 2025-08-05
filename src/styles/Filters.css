@@ -35,3 +35,25 @@
   accent-color: #222;
   cursor: pointer;
 }
+
+.favorites-button {
+  background-color: #102f44;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.favorites-button:hover {
+  background-color: #0b2435;
+}
+
+.favorites-button:active {
+  transform: scale(0.98);
+}

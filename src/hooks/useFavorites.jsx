@@ -24,5 +24,5 @@ export default function useFavorites() {
     return favorites.some((watch) => watch.id === watchId);
   };
 
-  return { favorites, addFavorite, removeFavorite, isFavorite };
+  return { favorites, addFavorite, removeFavorite, isFavorite};
 }

@@ -73,7 +73,7 @@ export function useWatches() {
             28000,
             'Audemars Piguet',
             2020,
-            'https://watch-connection.com/cdn/shop/files/15551ST.ZZ.1356ST.02__89872.1664538521_6d26f405-7a92-4450-9fe6-741076138c73_1024x1024.png?v=1692916847'
+            'https://www.watchguynyc.com/cdn/shop/products/WatchGuyNYC_APO38_Audemars_Piguet_Royal_Oak_Blue_Dial_Extra-Thin_Stainless_steel_Watch_15202ST.OO.1240ST.01_b56a8fab-a032-41c7-b508-fcf1cde06a6e_large.jpg?v=1729081347'
           ),
           new Watch(
             9,
@@ -118,7 +118,7 @@ export function useWatches() {
             16150,
             'Rolex',
             2020,
-            'https://diamondsourcenyc.com/cdn/shop/files/Black-Rolex-DLC-PVD-Submariner-41mm-Watch-126613ln-0002-pvd-2_774f273a-2cfe-44c6-a94f-0a5e803b7ca7.jpg?v=1708032474'
+            'https://media.rolex.com/image/upload/q_auto:eco/f_auto/t_v7-majesty/c_limit,w_3840/v1/catalogue/2025/upright-c/m126613ln-0002'
           ),
           new Watch(
             14,
@@ -325,7 +325,7 @@ export function useWatches() {
             20595,
             'Rolex',
             2022,
-            'https://diamondsourcenyc.com/cdn/shop/files/Rolex-GMT-Master-II-Pepsi-40mm-Watch-126710blro-0002.jpg?v=1723495509'
+            'https://cdn-images.farfetch-contents.com/22/22/38/96/22223896_51974358_600.jpg'
           ),
           new Watch(
             37,

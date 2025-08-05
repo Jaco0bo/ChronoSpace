@@ -1,9 +1,10 @@
 import { useState, useMemo } from "react";
 
-export default function useFilters(watches) {
+export default function useFilters(watches, favorites) {
   const [selectedBrands, setSelectedBrands] = useState([]);
   const [selectedPrices, setSelectedPrices] = useState([]);
   const [selectedColors, setSelectedColors] = useState([]);
+  const [showFavoritesOnly, setShowFavoritesOnly] = useState(false);
 
   const toggleFilter = (filterType, value) => {
     const updater = (prev) =>
@@ -18,6 +19,10 @@ export default function useFilters(watches) {
 
   const filteredWatches = useMemo(() => {
     return watches.filter((watch) => {
+      if (showFavoritesOnly) {
+        const isInFavorites = favorites.some((fav) => fav.id === watch.id);
+        if (!isInFavorites) return false;
+      }
       const matchBrand =
         selectedBrands.length === 0 || selectedBrands.includes(watch.brand);
 
@@ -45,10 +50,10 @@ export default function useFilters(watches) {
           if (color === "Rosado") return watch.color === "Rose Gold";
           return false;
         });
-
+      
       return matchBrand && matchPrice && matchColor;
     });
-  }, [watches, selectedBrands, selectedPrices, selectedColors]);
+  }, [watches, favorites, selectedBrands, selectedPrices, selectedColors, showFavoritesOnly]);
 
   return {
     filteredWatches,
@@ -56,5 +61,7 @@ export default function useFilters(watches) {
     selectedBrands,
     selectedPrices,
     selectedColors,
+    showFavoritesOnly,
+    setShowFavoritesOnly
   };
 }

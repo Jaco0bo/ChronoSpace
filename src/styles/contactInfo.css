@@ -40,7 +40,7 @@ h1 {
 
 .contact-form input[type="text"],
 .contact-form input[type="email"] {
-  font-family: 'Arial', sans-serif;
+  font-family: inherit;
   font-size: 16px;
   color: #333;
   padding: 8px 12px;
@@ -61,5 +61,6 @@ h1 {
   border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
+  font-family: inherit;
 }
 

@@ -11,8 +11,9 @@ export default function WatchList() {
   const { favorites, addFavorite, removeFavorite, isFavorite } = useFavorites();
   const { watches, loading, error } = useWatches();
   const [ currentPage, setCurrentPage ] = useState(1);   
-  const { filteredWatches, toggleFilter, selectedBrands, selectedPrices, selectedColors,
-  } = useFilters(watches);
+  const { filteredWatches, toggleFilter, selectedBrands, selectedPrices, selectedColors, 
+    showFavoritesOnly, setShowFavoritesOnly
+  } = useFilters(watches, favorites);
 
   useEffect(() => {
     setCurrentPage(1); 
@@ -42,6 +43,8 @@ export default function WatchList() {
         selectedColors={selectedColors}
         selectedPrices={selectedPrices}
         toggleFilter={toggleFilter}
+        setShowFavoritesOnly={setShowFavoritesOnly}
+        showFavoritesOnly={showFavoritesOnly}
       />  
       <div className="watch-list-wrapper">
         <div className="watch-list">

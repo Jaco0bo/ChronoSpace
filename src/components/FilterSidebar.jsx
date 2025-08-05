@@ -1,8 +1,13 @@
+import { use } from "react";
+import useFavorites from "../hooks/useFavorites";
+
 export default function FiltersSidebar({
   selectedBrands = [], 
   selectedPrices = [], 
-  selectedColors = [], 
-  toggleFilter 
+  selectedColors = [],
+  toggleFilter,
+  showFavoritesOnly,
+  setShowFavoritesOnly 
 }) {
   return (
     <div className="filters-sidebar">
@@ -47,6 +52,14 @@ export default function FiltersSidebar({
           {color}
         </label>
       ))}
+
+      <h3 className="filter-names">FAVORITOS</h3>
+      <button
+        className="favorites-button" 
+        type="button"
+        onClick={() => setShowFavoritesOnly(prev => !prev)}>
+          { showFavoritesOnly ? "Mostrar todos" : "Mostrar favoritos" } 
+        </ button>
     </div>
   );
 }
