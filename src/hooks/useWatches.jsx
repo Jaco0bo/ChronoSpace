@@ -123,7 +123,7 @@ export function useWatches() {
           new Watch(
             14,
             'Rolex Submariner 126613LB Blue/Gold',
-            'Blue/Gold',
+            'Gold',
             16150,
             'Rolex',
             2020,
